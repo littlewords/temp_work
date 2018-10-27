@@ -1,21 +1,24 @@
 <template>
     <div class="wraper">
-        <input class="input" :placeholder="placeholder" type="text" />
+        <input class="input" :placeholder="placeholder" :type="type" />
         <i class="clear" v-show="clear"></i>
     </div>
 </template>
 
 <script>
 export default {
-  data: function() {
-    return {
-      placeholder: "手机号："
-    };
-  },
   props: {
     clear: {
       type: Boolean,
       default: true
+    },
+    placeholder: {
+      type: String,
+      default: '请输入',
+    },
+    type: {
+      type: String,
+      default: 'text',
     }
   }
 };

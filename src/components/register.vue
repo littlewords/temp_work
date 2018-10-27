@@ -2,12 +2,16 @@
     <div class="wraper">
         <vHeader></vHeader>
         <div class="container">
-            <vInput placeholder="手机号："></vInput>
+            <vInput></vInput>
             <div class="line">
-                <vInput placeholder="密码：" type="password"></vInput>
+                <vInput></vInput>
+                <vCode></vCode>
             </div>
-            <submitBtn text="登录"></submitBtn>
-            <vLink text="注册账号"></vLink>
+            <div class="line">
+                <vInput></vInput>
+            </div>
+            <submitBtn></submitBtn>
+            <vLink></vLink>
         </div>
     </div>
 </template>
