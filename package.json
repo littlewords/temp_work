@@ -1,0 +1,14 @@
+{
+  "name": "work",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "server": "./node_modules/.bin/webpack-dev-server -c ./webpack.config.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
