@@ -3,7 +3,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: {
-        login: './src/login.js'
+        login: './src/login.js',
+        register: './src/register.js',
     },
     output: {
         filename: '[name].js',
@@ -14,7 +15,7 @@ module.exports = {
             test: /\.vue$/,
             loader: 'vue-loader'
         },{
-            test: /\.less$/,
+            test: /\.less$|\.css$/,
             loader: 'style-loader!css-loader!less-loader'
         },{
             test: /\.png$/,

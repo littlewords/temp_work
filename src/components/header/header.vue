@@ -8,9 +8,10 @@
 
 <script>
 export default {
-    data: function() {
-        return {
-            title: '登录'
+    props: {
+        title: {
+            type: String,
+            default: '标题',
         }
     }
 }

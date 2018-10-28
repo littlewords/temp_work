@@ -7,7 +7,7 @@
                 <vInput placeholder="密码：" type="password"></vInput>
             </div>
             <submitBtn text="登录"></submitBtn>
-            <vLink text="注册账号"></vLink>
+            <vLink text="注册账号" :clickHandler="goRegister"></vLink>
         </div>
     </div>
 </template>
@@ -26,6 +26,11 @@ export default {
         submitBtn,
         vLink,
         vCode,
+    },
+    methods: {
+        goRegister() {
+            window.location.href='/register.html'
+        }
     }
 }
 </script>

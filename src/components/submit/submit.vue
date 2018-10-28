@@ -1,5 +1,5 @@
 <template>
-    <div class="wraper">
+    <div class="wraper" @click="$emit('click')">
         {{text}}
     </div>
 </template>

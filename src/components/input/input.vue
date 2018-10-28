@@ -1,16 +1,30 @@
 <template>
     <div class="wraper">
-        <input class="input" :placeholder="placeholder" :type="type" />
-        <i class="clear" v-show="clear"></i>
+        <input class="input"
+          :value="value" 
+          :placeholder="placeholder" 
+          :type="inputType"
+          @input="onInput"
+           />
+        <i class="clear" v-show="showClear" @click="clearValue"></i>
     </div>
 </template>
 
 <script>
 export default {
+  // data() {
+  //   return {
+  //     value: '',
+  //   }
+  // },
   props: {
     clear: {
       type: Boolean,
       default: true
+    },
+    value: {
+      type: String,
+      default: ''
     },
     placeholder: {
       type: String,
@@ -19,6 +33,42 @@ export default {
     type: {
       type: String,
       default: 'text',
+    }
+  },
+  methods: {
+    clearValue() {
+      // this.value = '';
+      this.$emit('input', '');
+    },
+    onInput($event) {
+      this.$emit('input', $event.target.value);
+      return false;
+    }
+  },
+  computed: {
+    inputType() {
+      switch(this.type) {
+        case 'tel':
+          return 'tel' ;
+          break;
+        case 'password':
+          return 'password';
+          break;
+        default: 
+          return 'text';
+          break;
+      }
+    },
+    showClear() {
+      if(this.clear === false) {
+        return false
+      }
+
+      if(this.value === '') {
+        return false
+      }
+
+      return true;
     }
   }
 };
